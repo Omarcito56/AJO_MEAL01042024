@@ -1,0 +1,46 @@
+<div class="contenedor2">
+  <div class="meal-wrapper">
+      <div class="meal-search">
+        <!-- Seccion de arriba con texto en vista de favoritos -->
+          <h2 class="title">Tus favoritos serán agregados aquí.</h2>
+          <blockquote>Sientete libre de agregar los platillos que quieras, tus ganas de cocinar son tu unico limite!!.<br>
+              <cite>- Hola</cite>
+          </blockquote>
+      </div>
+
+      <!-- En esta seccion se iran agregando los favoritos que el usuario vaya seleccionando en la aplicacion -->
+      <div class="fav-meals-container">
+          <h2>Favourite Meals</h2>
+          <div class="fav-meals">
+              <!-- Aquí se agregarán las comidas favoritas -->
+          </div>
+      </div>
+
+   <!-- AGREGEGUE ESTO EL DIA DE HOY PARA AÑADIR LA MODAL DE RECETA EN FAVORITOS -->
+   <!-- Esta seccion solo se ve visible al momento de presionar el boton de Get Recipe que contiene cada platillo -->
+      <div class="meal-details">
+
+        <!-- Este boton es el que aparece por default en las modales de receta, y sirve obviamente para cerrar dicha modal -->
+        <button type="button" class="btn recipe-close-btn" id="recipe-close-btn">
+            <i class="fas fa-times"></i>
+          </button>
+
+
+        <div class="meal-details-content">
+            <!-- Aquí es donde se mostrarán los detalles de la receta -->
+        </div>
+
+    </div>
+    <!-- AGREGEGUE ESTO EL DIA DE HOY PARA AÑADIR LA MODAL DE RECETA EN FAVORITOS -->
+
+
+
+      <div class="search-container" id="search-container">
+          <input type="text" id="search-bar" placeholder="Buscar...">
+          <button id="close-search"><i class="fas fa-times"></i></button>
+      </div>
+  </div>
+
+  <script src="/AJO_MEAL/www/js/favoritos.js"></script>
+</div>
+      

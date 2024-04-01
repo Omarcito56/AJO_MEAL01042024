@@ -1,0 +1,38 @@
+<div class="navbar">
+    <ul>
+      <!-- Aqui se encuentran los 4 diferentes botones de la aplicacion buscar, favoritos, random y usuarios -->
+      <li><a href="#" id="buscar"><i class="fa-solid fa-magnifying-glass"></i> </a></li>
+      <li><a href="#" id="favoritos"><i class="far fa-star"></i> </a></li>
+      <!-- El boton de random solo funciona cuando estamos en la vista de buscar, si lo seleccionamos en otra vista, este no hara nada -->
+      <li><a href="#" id="random"><i class="fa-solid fa-shuffle"></i> </a></li>
+      <li><a href="#" id="usuarios"><i class="fa-solid fa-user"></i> </a></li>
+    </ul>
+  </div>
+  
+  <div class="search-container" id="search-container">
+    <input type="text" id="search-bar" placeholder="Buscar...">
+    <button id="close-search"><i class="fas fa-times"></i></button>
+  </div>
+  
+  <script >
+  
+  // Aqui definimos funciones para que al seleccionar un boton con el ID especifico se cargue esa vista parcial, a excepcion del boton de random, que es el encargado de llamar 10 platillos random de la API
+
+    let buscarbtn = document.getElementById("buscar");
+    buscarbtn.addEventListener("click", function (){
+      loadPartialView("buscar", document.querySelector(".app"))
+    });
+  
+    let Favoritebtn = document.getElementById("favoritos");
+    Favoritebtn.addEventListener("click", function (){
+      loadPartialView("favoritos", document.querySelector(".app"))
+    });
+  
+
+  
+  </script>
+
+  <!-- LLamamos al archivo con la funcion para que se oculte la nav bar que hizo Arechiga -->
+
+  <script src="/AJO_MEAL/www/js/menu.js"></script>
+
