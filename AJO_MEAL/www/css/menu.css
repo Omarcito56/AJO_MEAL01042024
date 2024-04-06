@@ -167,25 +167,25 @@
     }
   }
   
-  .navbar {
+  .anavbar {
     background: linear-gradient(to bottom, #fbf5f3, #E28413, #EFBD83);
     position: fixed;
     bottom: 0;
     width: 100%;
   }
   
-  .navbar ul {
+  .anavbar ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     text-align: center;
   }
   
-  .navbar ul li {
+  .anavbar ul li {
     display: inline;
   }
   
-  .navbar ul li a {
+  .anavbar ul li a {
     display: inline-block;
     padding: 10px 20px;
     color: #fbf5f3;
@@ -193,11 +193,11 @@
     transition: all 0.3s ease;
   }
   
-  .navbar ul li a:hover {
+  .anavbar ul li a:hover {
     background-color: #EFBD83;
   }
   
-  .navbar {
+  .anavbar {
     background-color: #333;
     position: fixed;
     bottom: 0;
@@ -206,7 +206,7 @@
     transform: translateY(0); 
   }
   
-  .navbar.hidden {
+  .anavbar.hidden {
     transform: translateY(100%); 
   }
   

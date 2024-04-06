@@ -21,8 +21,7 @@ function getRandomMeals() {
                         </div>
                         <div class="meal-name">
                             <h3>${meal.strMeal}</h3>
-                            <i class="fa-regular fa-heart"></i>
-                            <a href="#" class="recipe-btn">Get Recipe</a>
+                            <a href = "#" class = "recipe-btn">Get Recipe</a><i class="fa-regular fa-heart" onclick="addToFavorites(this, '${meal.idMeal}')"></i>
                         </div>
                     </div>
                 `;
