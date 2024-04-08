@@ -1,19 +1,47 @@
-// Función para agregar una comida a la lista de favoritos
-function addToFavorites(mealId) {
-    let favorites = localStorage.getItem('favorites');
-    if (!favorites) {
-        favorites = [];
-    } else {
-        favorites = JSON.parse(favorites);
+// // Función para agregar una comida a la lista de favoritos
+// function addToFavorites(mealId) {
+//     let favorites = localStorage.getItem('favorites');
+//     if (!favorites) {
+//         favorites = [];
+//     } else {
+//         favorites = JSON.parse(favorites);
+//     }
+//     favorites.push(mealId);
+//     localStorage.setItem('favorites', JSON.stringify(favorites));
+//     console.log('Meal added to favorites:', mealId);
+// }
+
+
+function aaddToFavorites(mealId) {
+console.log(mealId);
+
+    console.log(mealId);
+    let formData ={
+        usr_id : 1,
+        fav_mealid: mealId
     }
-    favorites.push(mealId);
-    localStorage.setItem('favorites', JSON.stringify(favorites));
-    console.log('Meal added to favorites:', mealId);
+    $.ajax({
+        url: "https://localhost:44317/api/Favorites",             // Ruta
+        method: 'POST',                     // Verbo
+        contentType: 'application/json',    // No cambies este
+        data: JSON.stringify(formData),     // Agarra la info del formData 
+        success: function (response) {
+            console.table(response);            //Mostrar en consola el resultado
+            if (!response.Success) { return }   // Cancela todo si !success (solo si tienes success en la respuesta de la API)
+
+            // AQUI ESCRIBE LO QUE VAYAS A HACER CON EL RESULTADO
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            // Manejar cualquier error que ocurra durante la solicitud AJAX
+            console.error('Error:', textStatus, errorThrown);
+        }
+    });
 }
 
 
 // Función para mostrar la receta de la comida, LA AGREGUE EL DIA 30/03/2024
 function getMealRecipe(e, mealId){
+    console.log(mealId);
     let mealDetailsContent = document.querySelector('.meal-details-content');
     e.preventDefault();
     fetchMealById(mealId)
