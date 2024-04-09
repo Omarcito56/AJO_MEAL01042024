@@ -46,7 +46,7 @@ function getMealList3(){
                         </div>
                         <div class = "meal-name">
                             <h3>${meal.strMeal}</h3>
-                            <a id="hearth" href = "#" class = "recipe-btn">Get Recipe</a><i class="fa-regular fa-heart" onclick="addToFavorites(this, '${meal.idMeal}')"></i>
+                            <a id="hearth" href = "#" class = "recipe-btn">Get Recipe</a><i class="fa-regular fa-heart" onclick="aaddToFavorites('${meal.idMeal}')"></i>
                         </div>
                     </div>
                 `;
