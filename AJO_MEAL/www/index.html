@@ -34,8 +34,10 @@
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
         <!-- <meta name="color-scheme" content="light dark">
         <link rel="stylesheet" href="css/index.css"> -->
+        <script src="./css/bootstrap/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/0e80afe050.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="css/menu.css">
+        <link rel="stylesheet" href="./css/login.css">
         <link rel="stylesheet" href="./css/bootstrap/dist/css/bootstrap.min.css">
         <title>Hello World</title>
 
@@ -62,7 +64,8 @@
             appRender = body.querySelector(".app");
 
             // De esta manera, al solo llamar la vista parcial de la nav bar, siempre estara presente y dependiendo de que seleccionemos se cargara una vista diferente arriba de ella
-
+            // loadPartialView("Users/login",document.querySelector(".app"));
+            loadPartialView("buscar",document.querySelector(".app"));
             loadPartialView("navbar", document.querySelector(".nav"));
 
         </script>

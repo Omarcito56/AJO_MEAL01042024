@@ -1,0 +1,22 @@
+body{
+/* background: linear-gradient(to bottom, #fbf5f3,#efbd83); */
+/* background: #efbd83 */
+min-height: 100vh;
+background: linear-gradient(180deg, #fbf5f3 0%, #efbd83 39%, #e28413 100%);
+
+}
+
+.login_bckg{
+    background: #efbd83;
+    border-style: solid;
+    border-color: #e28413;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap ;
+    align-items: center;
+
+    max-width: 40dvh;
+    border-radius: 10px;
+    margin-top: 20dvh;
+}

@@ -21,7 +21,7 @@ function GetFavorites(user) {
             usr_id : user
         }
         $.ajax({
-            url: "https://localhost:44317/api/Favorites/GetMealIds", // Ruta
+            url: "https://AjoMeal.bsite.net/api/Favorites/GetMealIds", // Ruta
             method: 'POST',                     // Verbo
             contentType: 'application/json',    // No cambies este
             data: JSON.stringify(formData),     // Agarra la info del formData 
@@ -49,7 +49,7 @@ console.log(mealId);
         fav_mealid: mealId
     }
     $.ajax({
-        url: "https://localhost:44317/api/Favorites/AddRemove",             // Ruta
+        url: "https://AjoMeal.bsite.net/api/Favorites/AddRemove",             // Ruta
         method: 'POST',                     // Verbo
         contentType: 'application/json',    // No cambies este
         data: JSON.stringify(formData),     // Agarra la info del formData 
