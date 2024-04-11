@@ -1,50 +1,22 @@
 // // Función para agregar una comida a la lista de favoritos
-function addToFavorites(mealId) {
-    let favorites = localStorage.getItem('favorites');
-console.log(favorites);
-    if (!favorites) {
-        favorites = [];
-    } else {
+// function addToFavorites(mealId) {
+//     let favorites = localStorage.getItem('favorites');
+// console.log(favorites);
+//     if (!favorites) {
+//         favorites = [];
+//     } else {
         
-        favorites = [];
-        console.log(favorites);
-    }
+//         favorites = [];
+//         console.log(favorites);
+//     }
     
-    favorites = mealId
+//     favorites = mealId
     
-    localStorage.setItem('favorites', JSON.stringify(favorites));
-    console.log('Meals added to favorites:', mealId);
-}
-
-
-function aaddToFavorites(mealId) {
-console.log(mealId);
-    let formData ={
-        usr_id : 1,
-        fav_mealid: mealId
-    }
-    $.ajax({
-        url: "https://localhost:44317/api/Favorites/AddRemove",             // Ruta
-        method: 'POST',                     // Verbo
-        contentType: 'application/json',    // No cambies este
-        data: JSON.stringify(formData),     // Agarra la info del formData 
-        success: function (response) {
-            console.table(response);            //Mostrar en consola el resultado
-            if (!response.Success) { return }   // Cancela todo si !success (solo si tienes success en la respuesta de la API)
-            
-            // AQUI ESCRIBE LO QUE VAYAS A HACER CON EL RESULTADO
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
-            // Manejar cualquier error que ocurra durante la solicitud AJAX
-            console.error('Error:', textStatus, errorThrown);
-        }
-    });
-}
+//     localStorage.setItem('favorites', JSON.stringify(favorites));
+//     console.log('Meals added to favorites:', mealId);
+// }
 
 function GetFavorites(user) {
-
-    
-        
         let formData ={
             usr_id : user
         }
@@ -59,7 +31,9 @@ function GetFavorites(user) {
                 let ret = response;
                 ret = ret.map(String);
                 console.log(ret);
-                addToFavorites(ret);
+                // addToFavorites(ret);
+                showFavorites(response)
+                
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 // Manejar cualquier error que ocurra durante la solicitud AJAX
@@ -67,6 +41,35 @@ function GetFavorites(user) {
             }
         });
     }
+
+function aaddToFavorites(mealId) {
+console.log(mealId);
+    let formData ={
+        usr_id : 1,
+        fav_mealid: mealId
+    }
+    $.ajax({
+        url: "https://localhost:44317/api/Favorites/AddRemove",             // Ruta
+        method: 'POST',                     // Verbo
+        contentType: 'application/json',    // No cambies este
+        data: JSON.stringify(formData),     // Agarra la info del formData 
+        success: function (response) {
+            console.table(response);            //Mostrar en consola el resultado
+            console.log(response);
+            let valor = response;
+            console.log(valor.action); 
+            if (valor.action == 'deleted') {
+                loadPartialView('favoritos', $('appRender'));
+            }
+            // AQUI ESCRIBE LO QUE VAYAS A HACER CON EL RESULTADO
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            // Manejar cualquier error que ocurra durante la solicitud AJAX
+            console.error('Error:', textStatus, errorThrown);
+        }
+    });
+}
+
 
 // Función para mostrar la receta de la comida, LA AGREGUE EL DIA 30/03/2024
 function getMealRecipe(e, mealId){
@@ -100,11 +103,11 @@ function getMealRecipe(e, mealId){
 
 
 // Modifica la función showFavorites para que llame a getMealRecipe al hacer clic en el botón "Get Recipe"
-function showFavorites() {
+function showFavorites(array_fav) {
     
-    let favorites = localStorage.getItem('favorites');
+    let favorites = array_fav;
     console.log(favorites);
-        favorites = JSON.parse(favorites);
+        // favorites = JSON.parse(favorites);
     console.log(favorites);
 
     const favMealsContainer = document.querySelector('.fav-meals'); //elige el div donde se colocaran las tarjetas
@@ -134,7 +137,7 @@ function showFavorites() {
                 removeBtn.addEventListener('click', () => {
                     aaddToFavorites(meal.idMeal)
                         GetFavorites(1);
-                        showFavorites();
+                        // showFavorites();
                         
                         
                     
@@ -194,5 +197,5 @@ function closeModal(){
 
 // Hasta el final llamamos cada funcion que contiene distintas funcionalidades, si de lo contrario tratamos de sacar todas las funciones que estas contiene, habra errores al volver a cargar las vistas parciales
 GetFavorites(1)
-showFavorites();
+// showFavorites();
 closeModal();
