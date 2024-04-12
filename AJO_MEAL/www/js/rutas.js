@@ -1,8 +1,3 @@
-// Función para cargar una vista parcial
-function loadPartialView(partialName, container) {
-    // Lógica para cargar la vista parcial
-  }
-  
   // Manejo de eventos para el primer conjunto de botones de navegación
   let buscarbtn = document.getElementById("buscar");
   let favoritebtn = document.getElementById("favoritos");
