@@ -101,28 +101,8 @@ function mealRecipeModal(meal){
 
 setupSearchFunctionality();
 
-// Función para agregar a favoritos y alternar el color del corazón
-function addToFavorites(heartIcon, mealId) {
-    let favorites = localStorage.getItem('favorites') ? JSON.parse(localStorage.getItem('favorites')) : [];
 
-    // Verificar si el platillo ya está en favoritos
-    const isFavorite = favorites.includes(mealId);
 
-    if (isFavorite) {
-        // Si el platillo está en favoritos, lo eliminamos
-        favorites = favorites.filter(id => id !== mealId);
-        heartIcon.classList.remove('selected'); // Remover la clase 'selected' (rojo)
-        heartIcon.setAttribute('data-favorite', 'false'); // Actualizar el atributo data-favorite
-    } else {
-        // Si el platillo no está en favoritos, lo agregamos
-        favorites.push(mealId);
-        heartIcon.classList.add('selected'); // Agregar la clase 'selected' (rojo)
-        heartIcon.setAttribute('data-favorite', 'true'); // Actualizar el atributo data-favorite
-    }
-
-    // Guardar la lista de favoritos actualizada en localStorage
-    localStorage.setItem('favorites', JSON.stringify(favorites));
-}
 
 
 
