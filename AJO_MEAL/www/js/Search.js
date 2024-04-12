@@ -97,6 +97,7 @@ function mealRecipeModal(meal){
 }
 
 
+
 }
 
 setupSearchFunctionality();
