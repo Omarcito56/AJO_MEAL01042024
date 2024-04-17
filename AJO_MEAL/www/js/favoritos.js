@@ -1,4 +1,6 @@
 
+console.log(getLocalStorageValue("usr_Name")); 
+
 
 function GetFavorites(user) {
         let formData ={
@@ -62,7 +64,7 @@ function fetchMealById(mealId) {
 function aaddToFavorites(mealId) {
     console.log(mealId);
     let formData ={
-        usr_id : 1,
+        usr_id : getLocalStorageValue("usr_Name"),
         fav_mealid: mealId
     }
     $.ajax({
@@ -93,7 +95,6 @@ function aaddToFavorites(mealId) {
 
 // Modifica la función showFavorites para que llame a getMealRecipe al hacer clic en el botón "Get Recipe"
 function showFavorites(array_fav) {
-    
     let favorites = array_fav;
     console.log(favorites);
     
@@ -124,7 +125,7 @@ var cant;
                 const removeBtn = mealItem.querySelector('.remove-btn');
                 removeBtn.addEventListener('click', () => {
                     aaddToFavorites(meal.idMeal)
-                        GetFavorites(1);
+                        GetFavorites(getLocalStorageValue("usr_Name"));
                         showFavorites();
                      // Actualizar la lista después de eliminar
                 });
@@ -180,7 +181,7 @@ function showFavoritesCategory(array_fav) {
                 const removeBtn = mealItem.querySelector('.remove-btn');
                 removeBtn.addEventListener('click', () => {
                     aaddToFavorites(meal.idMeal)
-                        GetFavorites(1);
+                        GetFavorites(getLocalStorageValue("usr_Name"));
                         showFavorites();
                      // Actualizar la lista después de eliminar
                 });
@@ -272,6 +273,6 @@ function getMealRecipe(e, mealId){
 }
 
 // Hasta el final llamamos cada funcion que contiene distintas funcionalidades, si de lo contrario tratamos de sacar todas las funciones que estas contiene, habra errores al volver a cargar las vistas parciales
-GetFavorites(1)
+GetFavorites(getLocalStorageValue("usr_Name"))
 // showFavorites();
 closeModal();

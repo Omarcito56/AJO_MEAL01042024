@@ -22,7 +22,7 @@
 
 
 
-document.addEventListener("deviceready", onDeviceReady, false);
+// document.addEventListener("deviceready", onDeviceReady, false);
 
 // Función para cargar una vista parcial
 function loadPartialView(viewName, divClass = null) {
@@ -39,8 +39,8 @@ function loadPartialView(viewName, divClass = null) {
 }
 
 
-function onDeviceReady() {
-  // Cordova is now initialized. Have fun!
-  console.log("Running cordova-" + cordova.platformId + "@" + cordova.version);
-  //document.getElementById("deviceready").classList.add("ready");
-}
+// function onDeviceReady() {
+//   // Cordova is now initialized. Have fun!
+//   console.log("Running cordova-" + cordova.platformId + "@" + cordova.version);
+//   //document.getElementById("deviceready").classList.add("ready");
+// }

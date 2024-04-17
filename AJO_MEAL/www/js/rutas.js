@@ -1,3 +1,4 @@
+// lero lero no tiene rutas
   // Manejo de eventos para el primer conjunto de botones de navegación
   let buscarbtn = document.getElementById("buscar");
   let favoritebtn = document.getElementById("favoritos");
@@ -7,7 +8,6 @@
     buscarbtn.removeEventListener("click", buscarClickHandler);
     buscarbtn.addEventListener("click", buscarClickHandler);
   }
-  
   if (favoritebtn) {
     favoritebtn.removeEventListener("click", favoriteClickHandler);
     favoritebtn.addEventListener("click", favoriteClickHandler);
