@@ -76,10 +76,10 @@ function aaddToFavorites(mealId) {
             console.log(response);
             let valor = response;
             console.log(valor.action); 
-            if (valor.action == 'deleted') {
+            
                 loadPartialView('favoritos', $('appRender'));}
             
-        },
+    ,
         error: function (jqXHR, textStatus, errorThrown) {
             // Manejar cualquier error que ocurra durante la solicitud AJAX
             console.error('Error:', textStatus, errorThrown);
@@ -182,6 +182,7 @@ function showFavoritesCategory(array_fav) {
                     aaddToFavorites(meal.idMeal)
                         // GetFavorites(getLocalStorageValue("usr_Name"));
                         // showFavorites();
+                        loadPartialView("favoritos", document.querySelector(".app"))
                      // Actualizar la lista después de eliminar
                 });
 
