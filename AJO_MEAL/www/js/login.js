@@ -67,7 +67,7 @@ function login(formData) {
     });        
 }
 
-function login(formData) {
+function Register(formData) {
     // Enviar la solicitud AJAX
     $.ajax({
         url: "https://localhost:44317/api/Users/Login",
