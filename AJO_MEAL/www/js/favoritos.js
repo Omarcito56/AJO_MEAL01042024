@@ -173,15 +173,15 @@ function showFavoritesCategory(array_fav) {
                     <div class="meal-name">
                         <h3>${meal.strMeal}</h3>
                         <a href="#" class="recipe-btn">Get Recipe</a>
-                        <i data-id="${meal.idMeal}" class=" remove-btn fa-regular fa-heart selected" onclick="" data-favorite = "true"></i>
+                        <i href="favoritos.html" data-id="${meal.idMeal}" class=" remove-btn fa-regular fa-heart selected" onclick="" data-favorite = "true"></i>
                     </div>
                 `;
                 // Agregar el evento de clic al botón de eliminar
                 const removeBtn = mealItem.querySelector('.remove-btn');
                 removeBtn.addEventListener('click', () => {
                     aaddToFavorites(meal.idMeal)
-                        GetFavorites(getLocalStorageValue("usr_Name"));
-                        showFavorites();
+                        // GetFavorites(getLocalStorageValue("usr_Name"));
+                        // showFavorites();
                      // Actualizar la lista después de eliminar
                 });
 
