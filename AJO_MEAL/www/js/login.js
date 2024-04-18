@@ -43,7 +43,7 @@ function login(formData) {
 function login(formData) {
     // Enviar la solicitud AJAX
     $.ajax({
-        url: "https://localhost:44317/api/Users/Login",
+        url: "https://AjoMeal.bsite.net/api/Users/Login",
         method: 'POST',
         contentType: 'application/json',
         data: JSON.stringify(formData),
@@ -70,7 +70,7 @@ function login(formData) {
 function Register(formData) {
     // Enviar la solicitud AJAX
     $.ajax({
-        url: "https://localhost:44317/api/Users/Login",
+        url: "https://AjoMeal.bsite.net/api/Users/AddUsr",
         method: 'POST',
         contentType: 'application/json',
         data: JSON.stringify(formData),

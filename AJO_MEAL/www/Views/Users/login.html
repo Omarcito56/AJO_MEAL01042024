@@ -104,6 +104,7 @@
         };
         console.log(formData);
         Register(formData);
+        loadPartialView("Users/login",document.querySelector(".app"));
         }else{
             console.log("Las contraseñas no son iguales");
         }

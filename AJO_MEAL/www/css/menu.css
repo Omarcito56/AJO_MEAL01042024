@@ -5,7 +5,7 @@
 
 /* CSS */
 .buttonrandom {
-  background-color: #e28413;
+  background-color: #e25a13;
   border-radius: 8px;
   border-style: none;
   box-sizing: border-box;
@@ -33,7 +33,7 @@
 
 .buttonrandom:hover,
 .buttonrandom:focus {
-  background-color: #e28413;
+  background-color: #e25a13;
 }
 
 
@@ -168,7 +168,7 @@
   }
   
   .anavbar {
-    background: linear-gradient(to bottom, #fbf5f3, #E28413, #EFBD83);
+
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -194,7 +194,7 @@
   }
   
   .anavbar ul li a:hover {
-    background-color: #EFBD83;
+    background-color: #e25a13;
   }
   
   .anavbar {
@@ -267,7 +267,7 @@
   /* BUSCAR */ 
   .contenedor2{
     min-height: 100vh;
-    background: linear-gradient(to bottom, #fbf5f3, #E28413, #EFBD83);
+    background: #E28413;
 
 }
 

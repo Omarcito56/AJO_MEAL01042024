@@ -3,7 +3,7 @@
       <!-- Aqui se encuentran los 4 diferentes botones de la aplicacion buscar, favoritos, random y usuarios -->
       <li><a href="#" id="buscar"><i class="fa-solid fa-magnifying-glass"></i> </a></li>
       <li><a href="#" id="favoritos"><i class="far fa-star"></i> </a></li>
-      <li><a href="#" id="usuarios"><i class="fa-solid fa-user"></i> </a></li>
+      <li><a href="#" id="usuarios"><i class="fa-solid fa-right-from-bracket"></i> </a></li>
     </ul>
   </div>
   
@@ -26,6 +26,10 @@
       loadPartialView("favoritos", document.querySelector(".app"))
     });
   
+    let Logoutbtn = document.getElementById("usuarios");
+    Logoutbtn.addEventListener("click", function (){
+      loadPartialView("Users/login",document.querySelector(".app"));
+    });
   
   </script>
 
