@@ -12,7 +12,7 @@
           <!-- Input donde el usuario escribe para realizar la busqueda -->
           <input type="text" class="search-control" placeholder="Enter an...." id="search-fav">
           <!-- Boton para realizar la busqueda -->
-          <button type="submit" class="search-btn btn" onclick="GetFavoritescategory(1)" id="search-fav">
+          <button type="submit" class="search-btn btn" onclick="GetFavoritescategory(getLocalStorageValue('usr_Name'))" id="search-fav">
             <i class="fas fa-search"></i>
           </button>
         </div>

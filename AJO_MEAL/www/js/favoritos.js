@@ -1,5 +1,4 @@
 
-console.log(getLocalStorageValue("usr_Name")); 
 
 
 function GetFavorites(user) {

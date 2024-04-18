@@ -23,13 +23,69 @@ function login(formData) {
         success: function(response) {
             console.table(response)
             // Obtener el valor de la cookie
-            saveLocalStorageValue("usr_Name", response.value);
+            if (response.Success==true){
+                console.log("Sesion iniciada");
+                saveLocalStorageValue("usr_Name", response.value);
+                console.log('ID de usuario:', getLocalStorageValue("usr_Name"));
+                loadPartialView("buscar", appRender);
+                loadPartialView("navbar", navRender);
+            }else{
+                console.log("No se Inicio sesion");
+            }
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            // Manejar cualquier error que ocurra durante la solicitud AJAX
+            console.error('Error:', textStatus, errorThrown);
+        }
+    });        
+}
 
-            console.log('ID de usuario:', getLocalStorageValue("usr_Name"));
-            
-            loadPartialView("buscar", appRender);
-            loadPartialView("navbar", navRender);
-            
+function login(formData) {
+    // Enviar la solicitud AJAX
+    $.ajax({
+        url: "https://localhost:44317/api/Users/Login",
+        method: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify(formData),
+        success: function(response) {
+            console.table(response)
+            // Obtener el valor de la cookie
+            if (response.Success==true){
+                console.log("Sesion iniciada");
+                saveLocalStorageValue("usr_Name", response.value);
+                console.log('ID de usuario:', getLocalStorageValue("usr_Name"));
+                loadPartialView("buscar", appRender);
+                loadPartialView("navbar", navRender);
+            }else{
+                console.log("No se Inicio sesion");
+            }
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            // Manejar cualquier error que ocurra durante la solicitud AJAX
+            console.error('Error:', textStatus, errorThrown);
+        }
+    });        
+}
+
+function login(formData) {
+    // Enviar la solicitud AJAX
+    $.ajax({
+        url: "https://localhost:44317/api/Users/Login",
+        method: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify(formData),
+        success: function(response) {
+            console.table(response)
+            // Obtener el valor de la cookie
+            if (response.Success==true){
+                console.log("Sesion iniciada");
+                saveLocalStorageValue("usr_Name", response.value);
+                console.log('ID de usuario:', getLocalStorageValue("usr_Name"));
+                loadPartialView("buscar", appRender);
+                loadPartialView("navbar", navRender);
+            }else{
+                console.log("No se Inicio sesion");
+            }
         },
         error: function(jqXHR, textStatus, errorThrown) {
             // Manejar cualquier error que ocurra durante la solicitud AJAX

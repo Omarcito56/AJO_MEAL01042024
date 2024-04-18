@@ -46,7 +46,7 @@
 
 
                         <div class="col-12 d-flex flex column align-items-center justify-content-center pb-3">
-                            <input class="btn btn-primary m-2" type="submit" value="Register">
+                            <input class="btn btn-primary m-2 btnreg" type="submit" value="Register">
                         </div>
 
 
@@ -86,4 +86,26 @@
         login(formData);
     });
 
+    document.querySelector('.btnreg').addEventListener('click', function () {
+        // Capturar los valores del formulario
+        var userreg = $('#RegUser').val();
+        var userPassword1 = $('#ConfirmPassword1').val();
+        var userPassword2 = $('#ConfirmPassword2').val();
+        console.log("Contraseña 1: "+ userPassword1);
+        console.log("Contraseña 2: "+ userPassword2);
+        if(userPassword1===userPassword2){
+            console.log("Las contraseñas son iguales");
+
+
+        // Construir el objeto con los datos del formulario
+        var formData = {
+            usr_Name: userreg,
+            usr_password: userPassword1,
+        };
+        console.log(formData);
+         login(formData);
+        }else{
+            console.log("Las contraseñas no son iguales");
+        }
+    });
     </script>
